@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <limits.h>
+#include <math.h>
 
 #define BLOCK_SIZE 32
 // Size of input matrix (raw_data)
@@ -117,6 +118,7 @@ void extractMatrix(float *inputMatrix, int index, int n, int p, int q, float **o
     }
 }
 
+// -------------------------------- Down Sampling ---------------------------------
 
 __global__ void Downsampling(float* input, float* output, int inputWidth, int inputHeight, int inputDepth) {
     int outputWidth = inputWidth / 2;
@@ -148,7 +150,11 @@ __global__ void Downsampling(float* input, float* output, int inputWidth, int in
     }
 }
 
+// ------------------------------ Activation function ---------------------------------
 
+__device__ float activation_tanh(float M){
+    return(tanh(M))
+}
 
 // --------------------------- Implémentation d'un CNN --------------------------------
 
