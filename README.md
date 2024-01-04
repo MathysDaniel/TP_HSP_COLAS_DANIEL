@@ -1,6 +1,6 @@
 # Projet de Traitement Parallèle - Utilisation de CUDA
 
-Ce dépôt GitHub contient le code réalisé par Benjamin COLAS et Mathys DANIEL dans le cadre de plusieurs séances de travaux pratiques (TP) en HSP. L'objectif principal de ces séances était de maîtriser l'utilisation de CUDA, étudier la complexité algorithmique, comparer les performances entre CPU et GPU, implémenter le CNN LeNet-5 pour l'inférence, ainsi que de réaliser diverses opérations matricielles sur GPU.
+Ce dépôt GitHub contient le code réalisé par **Benjamin COLAS** et **Mathys DANIEL** dans le cadre de plusieurs séances de travaux pratiques (TP) en HSP. L'objectif principal de ces séances était de maîtriser l'utilisation de CUDA, étudier la complexité algorithmique, comparer les performances entre CPU et GPU, implémenter le CNN LeNet-5 pour l'inférence, ainsi que de réaliser diverses opérations matricielles sur GPU.
 
 ## Objectifs principaux
 
