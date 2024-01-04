@@ -46,11 +46,7 @@ Vous avez plusieurs choix pour créer ces matrices :
 - Créer des tableaux à 1 dimension (N=32x32, 6x28x28, 6x14x14 et 6x5x5 respectivement) où chaque case correspond à un élément.
 - Créer des tableaux à 2 ou 3 dimensions, avec la gestion des pointeurs de pointeurs de pointeurs.
 
-#### Convolution 2D et Subsampling
 
-- Création de données pour simuler les opérations de la première couche de LeNet-5.
-- Génération de matrices pour les données d'entrée, les sorties de convolution et de sous-échantillonnage, ainsi que les noyaux de convolution.
-- 
 ### Convolution 2D
 
 #### Layer 2 - Convolution 2D
