@@ -1,6 +1,6 @@
 # Projet de Traitement Parallèle - Utilisation de CUDA
 
-Ce dépôt GitHub contient le code réalisé dans le cadre de plusieurs séances de travaux pratiques (TP) en HSP. L'objectif principal de ces séances était de maîtriser l'utilisation de CUDA, étudier la complexité algorithmique, comparer les performances entre CPU et GPU, implémenter le CNN LeNet-5 pour l'inférence, ainsi que de réaliser diverses opérations matricielles sur GPU.
+Ce dépôt GitHub contient le code réalisé par Benjamin COLAS et Mathys DANIEL dans le cadre de plusieurs séances de travaux pratiques (TP) en HSP. L'objectif principal de ces séances était de maîtriser l'utilisation de CUDA, étudier la complexité algorithmique, comparer les performances entre CPU et GPU, implémenter le CNN LeNet-5 pour l'inférence, ainsi que de réaliser diverses opérations matricielles sur GPU.
 
 ## Objectifs principaux
 
@@ -29,7 +29,22 @@ L'objectif final est d'implémenter l'inférence d'un classique CNN, LeNet-5, en
 - Mesures des temps d'exécution CPU et GPU pour évaluer l'accélération obtenue.
 - Comparaison des résultats avec les caractéristiques du GPU utilisé.
 
-## Implémentation des premières couches de LeNet-5 (Suite)
+## Implémentation des premières couches de LeNet-5
+
+### Génération des données pour Layer 1
+
+#### Layer 1 - Génération des données de test
+
+Dans cette section, des matrices spécifiques sont nécessaires pour simuler les données d'entrée et de sortie des opérations de la première couche du réseau LeNet-5. Les matrices requises sont :
+
+- Une matrice float raw_data de taille 32x32 initialisée avec des valeurs comprises entre 0 et 1, correspondant aux données d'entrée.
+- Une matrice float C1_data de taille 6x28x28 initialisée à 0 qui stockera les valeurs de sortie de la convolution 2D (C1) après la première couche.
+- Une matrice float S1_data de taille 6x14x14 initialisée à 0 pour stocker les valeurs de sortie du sous-échantillonnage (S1) de la première couche.
+- Une matrice float C1_kernel de taille 6x5x5 initialisée avec des valeurs comprises entre 0 et 1, représentant les premiers noyaux de convolution.
+
+Vous avez plusieurs choix pour créer ces matrices :
+- Créer des tableaux à 1 dimension (N=32x32, 6x28x28, 6x14x14 et 6x5x5 respectivement) où chaque case correspond à un élément.
+- Créer des tableaux à 2 ou 3 dimensions, avec la gestion des pointeurs de pointeurs de pointeurs.
 
 #### Convolution 2D et Subsampling
 
@@ -54,20 +69,18 @@ L'objectif final est d'implémenter l'inférence d'un classique CNN, LeNet-5, en
 
 ### Fonctions d'activation
 
-#### Layer 2 - Fonction d'activation tanh
+#### Fonction d'activation tanh
 
 - Ajout d'une fonction d'activation de type tanh, spécifiquement en sortie de la première convolution.
 - Cette fonction d'activation peut être appelée par chaque kernel de votre GPU avec le prototype suivant :
 
-### Tests après l'ajout de la fonction d'activation
+#### Tests après l'ajout de la fonction d'activation
 
 - Après la création de cette fonction d'activation, effectuez à nouveau des tests sur les premières couches pour évaluer les résultats obtenus.
 
 ---
 
 L'ajout de cette fonction d'activation, en particulier en sortie de la première convolution, permettra d'améliorer les opérations effectuées dans les premières couches du réseau de neurones LeNet-5.
-
-*Les détails spécifiques sur les implémentations et les fonctions utilisées seront disponibles dans la documentation du code source.*
 
 ---
 
