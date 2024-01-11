@@ -66,11 +66,10 @@ Pour créer ces matrices nous effectuons le choix suivant :
 #### Fonction d'activation tanh
 
 - Ajout d'une fonction d'activation de type tanh, spécifiquement en sortie de la première convolution.
-- Cette fonction d'activation peut être appelée par chaque kernel de votre GPU avec le prototype suivant :
 
 #### Tests après l'ajout de la fonction d'activation
 
-- Après la création de cette fonction d'activation, effectuez à nouveau des tests sur les premières couches pour évaluer les résultats obtenus.
+- Après la création de cette fonction d'activation, la réalisation des tests sur les premières couches pour évaluer les résultats obtenus n'a pas pu être réalisé de manière efficace pour des raisons qui, faute de temps, n'ont pu être determinée.
 
 ---
 
