@@ -35,17 +35,15 @@ L'objectif final est d'implémenter l'inférence d'un classique CNN, LeNet-5, en
 
 #### Layer 1 - Génération des données de test
 
-Dans cette section, des matrices spécifiques sont nécessaires pour simuler les données d'entrée et de sortie des opérations de la première couche du réseau LeNet-5. Les matrices requises sont :
+Dans cette section, nous implémentons les matrices spécifiques nécessaires pour simuler les données d'entrée et de sortie des opérations de la première couche du réseau LeNet-5. Les matrices implémentées sont :
 
 - Une matrice float raw_data de taille 32x32 initialisée avec des valeurs comprises entre 0 et 1, correspondant aux données d'entrée.
 - Une matrice float C1_data de taille 6x28x28 initialisée à 0 qui stockera les valeurs de sortie de la convolution 2D (C1) après la première couche.
 - Une matrice float S1_data de taille 6x14x14 initialisée à 0 pour stocker les valeurs de sortie du sous-échantillonnage (S1) de la première couche.
 - Une matrice float C1_kernel de taille 6x5x5 initialisée avec des valeurs comprises entre 0 et 1, représentant les premiers noyaux de convolution.
 
-Vous avez plusieurs choix pour créer ces matrices :
+Pour créer ces matrices nous effectuons le choix suivant :
 - Créer des tableaux à 1 dimension (N=32x32, 6x28x28, 6x14x14 et 6x5x5 respectivement) où chaque case correspond à un élément.
-- Créer des tableaux à 2 ou 3 dimensions, avec la gestion des pointeurs de pointeurs de pointeurs.
-
 
 ### Convolution 2D
 
